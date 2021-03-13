@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on Doc Test of Stone</title>
+    <link>https://github.com/stone5508/stone5508.github.io.git/notes/</link>
+    <description>Recent content in Notes on Doc Test of Stone</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2019. First Last</copyright>
+    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://github.com/stone5508/stone5508.github.io.git/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tutorial of Doc-site Deployment with Hugo and Github Pages</title>
+      <link>https://github.com/stone5508/stone5508.github.io.git/notes/notes_1/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/stone5508/stone5508.github.io.git/notes/notes_1/</guid>
+      <description>Install Hugo on Windows 10  Download the according Hugo zip file for Windows 10 from Hugo Releases. Extract the zip file and you will see one executable and a couple markdown files. Copy hugo.exe to root folder, i.e. C:\Hugo\bin. Open Control Panel, find All Control Panel Items and then System; add your Hugo path (i.e.C:\Hugo\bin) to your Environment Variables as both in User Variables and System Variables; click OK to all buttons.</description>
+    </item>
+    
+    <item>
+      <title>tempus fermentum urna eget</title>
+      <link>https://github.com/stone5508/stone5508.github.io.git/notes/notes_2/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/stone5508/stone5508.github.io.git/notes/notes_2/</guid>
+      <description>consequat erat Dolore fringilla integer mattis vestibulum leo ridiculus amet adipiscing pretium tortor etiam ullamcorper. Bibendum dolore amet metus lacus proin lacinia suscipit pulvinar facilisis ut quisque netus. Nam turpis sed euismod mi est aliquam nam facilisis. Placerat aliqua fames interdum lectus at turpis nisi arcu natoque phasellus fringilla morbi.
+Gravida erat eu ridiculus tortor a pharetra consectetur, elementum pulvinar nunc turpis duis vestibulum dui. Quis turpis vitae sit placerat dui tincidunt morbi natoque ultricies facilisis.</description>
+    </item>
+    
+    <item>
+      <title>mus tortor in sociis</title>
+      <link>https://github.com/stone5508/stone5508.github.io.git/notes/notes_4/</link>
+      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/stone5508/stone5508.github.io.git/notes/notes_4/</guid>
+      <description>hendrerit consectetur Interdum aliqua rhoncus nec gravida vivamus volutpat ligula auctor. Bolestie mollis eget suscipit sociis vel dolore tellus diam. Sagittis porttitor aliquam pharetra condimentum auctor tristique adipiscing, egestas tellus consectetur eget netus dignissim duis. Dictum lectus commodo lorem erat viverra laoreet mollis nulla hendrerit vivamus suscipit.
+Fringilla phasellus dictum porta enim auctor aliquam accimsan cursus tortor ornare aliquet. Sociis mollis lobortis laoreet at odio consequat ornare et. Nunc pellentesque consectetur bolestie leo praesent nisl, feugiat dui pharetra accimsan pretium leo imperdiet.</description>
+    </item>
+    
+    <item>
+      <title>luctus dolore vivamus nullam</title>
+      <link>https://github.com/stone5508/stone5508.github.io.git/notes/notes_3/</link>
+      <pubDate>Wed, 21 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/stone5508/stone5508.github.io.git/notes/notes_3/</guid>
+      <description>est eiusmod Etiam in netus accimsan dictum maecenas tortor a diam hendrerit. Pharetra facilisi eleifend varius madssa faucibus mollis adipiscing nulla eiusmod nisl. In quam sem nullam fringilla tellus tempor facilisi nisl integer eu maecenas. Suscipit consectetur bolestie tempus elit adipiscing in iaculis etiam penatibus incididunt magnis luctus.
+Aenean consectetur nullam orci hendrerit tortor phasellus vel odio imperdiet iaculis. Lacinia vestibulum integer congue semper id ornare libero cras. Facilisi nisi hendrerit pulvinar sociis metus ligula nulla praesent.</description>
+    </item>
+    
+  </channel>
+</rss>

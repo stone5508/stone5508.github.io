@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  />
+  
+  <title>Doc Test of Stone</title>
+  
+
+  <meta name="description" content="" />
+  <meta name="author" content="Doc Test of Stone" />
+
+  
+  <meta name="generator" content="khata theme by Darshan in Hugo 0.81.0" />
+  
+
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="/stone5508/stone5508.github.io.git/css/khata.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito|Open+Sans:400|Roboto+Mono&display=swap" rel="stylesheet">
+  
+  <script src="/stone5508/stone5508.github.io.git/js/khata.js" /></script>
+</head>
+  <body class="bg-light">
+    <div class="wrapper">
+      <div class="header">
+  <nav id="main-nav">
+    <div class="hamburger-icon-container">
+      <span class="text-white border-bottom text-uppercase ml-2">Doc Test of Stone</span>
+      <i class="hamburger fas fa-bars mr-4" onclick="toggleMainMenu(this)"></i>
+    </div>
+    <div class="all-menu expanded standard">
+      <div class="main-menu"><a href="/stone5508/stone5508.github.io.git/">Home</a></div>
+
+      
+<div class="dropdown main-menu">
+  <span class="dropbtn" onclick="toggleSectionMenu(this)">
+    Sections <i class="section-menu fas fa-chevron-down"></i>
+  </span>
+  <div class="dropdown-content">
+    <div class="rounded bg-light mt-2">
+      <ul class="list-unstyled m-0">
+        
+        
+        <li class="dropdown-link pl-3 pr-3 pt-1 pb-1 rounded">
+          <a href="https://github.com/stone5508/stone5508.github.io.git/notes/">Notes</a>
+        </li>
+        
+        
+        <li class="dropdown-link pl-3 pr-3 pt-1 pb-1 rounded">
+          <a href="https://github.com/stone5508/stone5508.github.io.git/post/">Blog Posts</a>
+        </li>
+        
+        
+        <li class="dropdown-link pl-3 pr-3 pt-1 pb-1 rounded">
+          <a href="https://github.com/stone5508/stone5508.github.io.git/poems/">Poems</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+  let toggleHeight = function(elem) {
+    if (getComputedStyle(elem)["height"] === "0px") {
+      elem.style.maxHeight = elem.scrollHeight + 5 + "px";
+    } else {
+      elem.style.maxHeight = "0px";
+    }
+  };
+  let toggleSectionMenu = function(x) {
+    toggleHeight(x.nextElementSibling);
+    document.querySelector(".section-menu").classList.toggle("fa-chevron-down");
+    document.querySelector(".section-menu").classList.toggle("fa-chevron-up");
+  };
+  let resetSectionMenu = function() {
+    document.querySelector(".section-menu").classList.add("fa-chevron-down");
+    document.querySelector(".section-menu").classList.remove("fa-chevron-up");
+  };
+  let zeroHeight = function(elem) {
+    elem.style.maxHeight = "0px";
+  };
+  let checkClick = function() {
+    if (!document.querySelector(".dropdown").contains(event.target)) {
+      zeroHeight(document.querySelector(".dropdown-content"));
+      resetSectionMenu();
+    }
+  };
+  window.onclick = function() {
+    if (!vw.matches) {
+      checkClick();
+    }
+  };
+  window.ontouchstart = function() {
+    if (!vw.matches) {
+      checkClick();
+    }
+  };
+</script>
+
+
+      <div class="main-menu">
+  <a href="/stone5508/stone5508.github.io.git/#alltaxa" onclick="resetMenus()">Taxa</a>
+</div>
+<script>
+  let resetMenus = function() {
+    if (vw.matches) {
+      resetMainMenu();
+      document.querySelector(".all-menu").classList.add("d-none");
+    }
+    if (document.querySelector(".dropdown-content")) {
+      resetSectionMenu();
+      zeroHeight(document.querySelector(".dropdown-content"));
+    }
+  };
+</script>
+
+      <div class="main-menu">
+  <a href="/stone5508/stone5508.github.io.git/archive">Archive</a>
+</div>
+
+    </div>
+  </nav>
+</div>
+<script>
+  let toggleDisplay = function(elem) {
+    elem.classList.toggle("d-none");
+  };
+  let toggleMainMenu = function(x) {
+    toggleDisplay(x.parentNode.nextElementSibling);
+    document.querySelector(".hamburger").classList.toggle("fa-bars");
+    document.querySelector(".hamburger").classList.toggle("fa-times");
+    if (document.querySelector(".dropdown-content")) {
+      resetSectionMenu();
+      zeroHeight(document.querySelector(".dropdown-content"));
+    }
+  };
+  let resetMainMenu = function() {
+    document.querySelector(".hamburger").classList.add("fa-bars");
+    document.querySelector(".hamburger").classList.remove("fa-times");
+  };
+  function smMenu(x) {
+    let allMenu = document.querySelector(".all-menu");
+    let dropDown = document.querySelector(".dropdown-content");
+    if (x.matches) {
+      allMenu.classList.add("d-none");
+      allMenu.style.flexDirection = "column";
+      if (dropDown) {
+        resetSectionMenu();
+        dropDown.style.width = "calc(90vw - 4.5px)";
+        dropDown.style.maxHeight = "0px";
+        dropDown.style.position = "static";
+      }
+      resetMainMenu();
+    } else {      
+      allMenu.classList.remove("d-none");
+      allMenu.style.flexDirection = "row";
+      if (dropDown) {
+        dropDown.style.width = "auto";
+        resetSectionMenu();
+        dropDown.style.maxHeight = "0px";
+        dropDown.style.position = "absolute";
+      }
+      resetMainMenu();
+    }
+  }
+  let vw = window.matchMedia("(max-width: 750px)");
+  smMenu(vw); 
+  vw.addListener(smMenu); 
+</script>
+
+      <main>
+        
+<div class="about-container position-relative">
+  <div class="profile-info d-flex flex-row">
+    <div class="profile-photo" style="display: flex; align-items: flex-end;">
+      <img
+        src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2024092922,30002737&amp;fm=26&amp;gp=0.jpg"
+        style="width: 200px; margin-right:20px; border-radius: 10%;"
+      />
+    </div>
+
+    <div class="d-flex flex-column">
+      <div>
+        <h1 style="font-size: calc(2em + 0.5vw);">Doc Test of Stone</h1>
+        <h2 style="font-size: calc(1.7em + 0.5vw)">Dictorial for Documentation with Hugo and Github</h2>
+        <h3 style="font-size: calc(1.4em + 0.5vw);"></h3>
+        <div class="d-flex flex-row flex-wrap social" style="margin-bottom: 40px;">
+  
+</div>
+
+      </div>
+      <div style="font-size: 1.1em;">
+        <strong>Please find SECTIONS on the upper left coner and then NOTES</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  id="recent"
+  class="bg-secondary2"
+  style="padding-top: 40px; padding-bottom: 30px;"
+>
+  <div class="standard">
+    <h1 class="top-h1 mt-4 mb-4 text-white">Recent</h1>
+    <div class="grid-container">
+      
+<div class="p-3 bg-light shadow border rounded index-box">
+  <h2 class="pb-1">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/notes/">Notes</a>
+  </h2>
+
+  <div class="d-flex flex-column">
+    
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">3/10/21 -
+      </div>
+      <div>
+        <a
+          href="https://github.com/stone5508/stone5508.github.io.git/notes/notes_1/"
+          title="Test of Stone"
+        >Tutorial of Doc-site Deployment with Hugo and Github Pages</a>
+      </div>
+    </div>
+    
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">4/18/18 -
+      </div>
+      <div>
+        <a
+          href="https://github.com/stone5508/stone5508.github.io.git/notes/notes_2/"
+          title="dignissim feugiat cras diam mi aenean varius"
+        >tempus fermentum urna eget</a>
+      </div>
+    </div>
+    
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">4/16/18 -
+      </div>
+      <div>
+        <a
+          href="https://github.com/stone5508/stone5508.github.io.git/notes/notes_4/"
+          title="euismod eget auctor tempus egestas laoreet augue"
+        >mus tortor in sociis</a>
+      </div>
+    </div>
+    
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">2/21/18 -
+      </div>
+      <div>
+        <a
+          href="https://github.com/stone5508/stone5508.github.io.git/notes/notes_3/"
+          title="commodo sociis lorem sem tempus cras ultricies"
+        >luctus dolore vivamus nullam</a>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="p-3 bg-light shadow border rounded index-box">
+  <h2 class="pb-1">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/">Blog Posts</a>
+  </h2>
+
+  <div class="d-flex flex-column">
+    
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">5/23/18 -
+      </div>
+      <div>
+        <a
+          href="https://github.com/stone5508/stone5508.github.io.git/post/post_1/"
+          title="vulputate sem sapien felis ullamcorper risus mi eu metus integer posuere fermentum"
+        >vestibulum vitae dictum aliqua phasellus magnis at</a>
+      </div>
+    </div>
+    
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">5/18/18 -
+      </div>
+      <div>
+        <a
+          href="https://github.com/stone5508/stone5508.github.io.git/post/post_2/"
+          title="posuere ultricies ornare ligula augue do aliquam vitae erat labore ipsum nibh"
+        >enim ultricies dolore metus ac eiusmod interdum</a>
+      </div>
+    </div>
+    
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">4/23/18 -
+      </div>
+      <div>
+        <a
+          href="https://github.com/stone5508/stone5508.github.io.git/post/post_5/"
+          title="sollicitudin id orci consequat justo integer nulla blandit ac aliquam sapien dui"
+        >morbi faucibus tempus sed elit bolestie potenti</a>
+      </div>
+    </div>
+    
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">3/9/18 -
+      </div>
+      <div>
+        <a
+          href="https://github.com/stone5508/stone5508.github.io.git/post/post_6/"
+          title="luctus ullamcorper eu sagittis in dolore ridiculus nisi curabitur diam porta libero"
+        >nisi bibendum tellus laoreet id tortor cursus</a>
+      </div>
+    </div>
+    
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">2/25/18 -
+      </div>
+      <div>
+        <a
+          href="https://github.com/stone5508/stone5508.github.io.git/post/post_4/"
+          title="pellentesque madssa netus natoque velit scelerisque tempor est maecenas auctor venenatis mus"
+        >est odio vel sapien augue neque incididunt</a>
+      </div>
+    </div>
+    
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">1/6/18 -
+      </div>
+      <div>
+        <a
+          href="https://github.com/stone5508/stone5508.github.io.git/post/post_3/"
+          title="dictum tellus sapien vitae integer justo amet mauris cras bolestie sollicitudin dignissim"
+        >luctus enim ultricies auctor pulvinar nam etiam</a>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="p-3 bg-light shadow border rounded index-box">
+  <h2 class="pb-1">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/poems/">Poems</a>
+  </h2>
+
+  <div class="d-flex flex-column">
+    
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">6/19/18 -
+      </div>
+      <div>
+        <a
+          href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_3/"
+          title="porttitor ultrices ultricies madssa aliqua"
+        >nisl natoque lacinia</a>
+      </div>
+    </div>
+    
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">6/5/18 -
+      </div>
+      <div>
+        <a
+          href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_5/"
+          title="justo arcu aliquam et tempus"
+        >ullamcorper sed sociis</a>
+      </div>
+    </div>
+    
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">3/21/18 -
+      </div>
+      <div>
+        <a
+          href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_2/"
+          title="imperdiet euismod mus ligula malesuada"
+        >non vitae at</a>
+      </div>
+    </div>
+    
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">1/30/18 -
+      </div>
+      <div>
+        <a
+          href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_4/"
+          title="morbi dolore consequat elementum neque"
+        >integer purus aliquam</a>
+      </div>
+    </div>
+    
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">1/23/18 -
+      </div>
+      <div>
+        <a
+          href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_1/"
+          title="ultricies est fames pellentesque mattis"
+        >tellus mus elementum</a>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</div>
+<div id="alltaxa">
+  <div class="standard">
+    <h1 class="top-h1 mb-4">Taxa</h1>
+    <div class="p-3 bg-light shadow border rounded">
+      
+
+
+
+
+
+
+
+
+
+
+<h2>
+  Tags
+  <small title="Number of unique Tags">
+    (28)
+  </small>
+</h2>
+
+<div class="d-flex flex-row flex-wrap ml-2 mb-4">
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/tags/notes/">notes</a> -
+    <small
+      title="Number of articles with Tag 'notes'"
+      >9</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/tags/poems/">poems</a> -
+    <small
+      title="Number of articles with Tag 'poems'"
+      >5</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/tags/venenatis/">venenatis</a> -
+    <small
+      title="Number of articles with Tag 'venenatis'"
+      >3</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_5/">adipiscing</a> -
+    <small
+      title="Only one article titled 'ullamcorper sed sociis' has Tag 'adipiscing'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_1/">aliquam incididunt</a> -
+    <small
+      title="Only one article titled 'vestibulum vitae dictum aliqua phasellus magnis at' has Tag 'aliquam incididunt'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/notes/notes_4/">bibendum</a> -
+    <small
+      title="Only one article titled 'mus tortor in sociis' has Tag 'bibendum'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_5/">egestas donec</a> -
+    <small
+      title="Only one article titled 'morbi faucibus tempus sed elit bolestie potenti' has Tag 'egestas donec'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_3/">eiusmod</a> -
+    <small
+      title="Only one article titled 'nisl natoque lacinia' has Tag 'eiusmod'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/notes/notes_2/">erat</a> -
+    <small
+      title="Only one article titled 'tempus fermentum urna eget' has Tag 'erat'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_4/">est</a> -
+    <small
+      title="Only one article titled 'integer purus aliquam' has Tag 'est'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_2/">eu fames</a> -
+    <small
+      title="Only one article titled 'enim ultricies dolore metus ac eiusmod interdum' has Tag 'eu fames'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_1/">euismod</a> -
+    <small
+      title="Only one article titled 'tellus mus elementum' has Tag 'euismod'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_6/">fames porta</a> -
+    <small
+      title="Only one article titled 'nisi bibendum tellus laoreet id tortor cursus' has Tag 'fames porta'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/notes/notes_3/">fermentum</a> -
+    <small
+      title="Only one article titled 'luctus dolore vivamus nullam' has Tag 'fermentum'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_4/">imperdiet</a> -
+    <small
+      title="Only one article titled 'integer purus aliquam' has Tag 'imperdiet'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_5/">in</a> -
+    <small
+      title="Only one article titled 'ullamcorper sed sociis' has Tag 'in'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_3/">laoreet</a> -
+    <small
+      title="Only one article titled 'luctus enim ultricies auctor pulvinar nam etiam' has Tag 'laoreet'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_4/">ligula</a> -
+    <small
+      title="Only one article titled 'est odio vel sapien augue neque incididunt' has Tag 'ligula'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_4/">malesuada ornare</a> -
+    <small
+      title="Only one article titled 'est odio vel sapien augue neque incididunt' has Tag 'malesuada ornare'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_3/">mollis urna</a> -
+    <small
+      title="Only one article titled 'luctus enim ultricies auctor pulvinar nam etiam' has Tag 'mollis urna'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/notes/notes_3/">nibh</a> -
+    <small
+      title="Only one article titled 'luctus dolore vivamus nullam' has Tag 'nibh'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/notes/notes_4/">odio</a> -
+    <small
+      title="Only one article titled 'mus tortor in sociis' has Tag 'odio'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_2/">pharetra</a> -
+    <small
+      title="Only one article titled 'enim ultricies dolore metus ac eiusmod interdum' has Tag 'pharetra'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_2/">placerat</a> -
+    <small
+      title="Only one article titled 'non vitae at' has Tag 'placerat'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/notes/notes_2/">sagittis</a> -
+    <small
+      title="Only one article titled 'tempus fermentum urna eget' has Tag 'sagittis'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_3/">turpis</a> -
+    <small
+      title="Only one article titled 'nisl natoque lacinia' has Tag 'turpis'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_2/">varius</a> -
+    <small
+      title="Only one article titled 'non vitae at' has Tag 'varius'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_1/">velit</a> -
+    <small
+      title="Only one article titled 'vestibulum vitae dictum aliqua phasellus magnis at' has Tag 'velit'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+</div>
+
+
+<h2>
+  Categories
+  <small title="Number of unique Categories">
+    (19)
+  </small>
+</h2>
+
+<div class="d-flex flex-row flex-wrap ml-2 mb-4">
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/categories/habitant/">habitant</a> -
+    <small
+      title="Number of articles with Category 'habitant'"
+      >2</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_5/">aliqua</a> -
+    <small
+      title="Only one article titled 'ullamcorper sed sociis' has Category 'aliqua'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_1/">aliquam auctor</a> -
+    <small
+      title="Only one article titled 'vestibulum vitae dictum aliqua phasellus magnis at' has Category 'aliquam auctor'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_6/">aliquet ligula</a> -
+    <small
+      title="Only one article titled 'nisi bibendum tellus laoreet id tortor cursus' has Category 'aliquet ligula'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_5/">arcu eleifend</a> -
+    <small
+      title="Only one article titled 'morbi faucibus tempus sed elit bolestie potenti' has Category 'arcu eleifend'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_3/">diam aliqua</a> -
+    <small
+      title="Only one article titled 'luctus enim ultricies auctor pulvinar nam etiam' has Category 'diam aliqua'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_5/">dignissim</a> -
+    <small
+      title="Only one article titled 'morbi faucibus tempus sed elit bolestie potenti' has Category 'dignissim'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_1/">do</a> -
+    <small
+      title="Only one article titled 'vestibulum vitae dictum aliqua phasellus magnis at' has Category 'do'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_2/">facilisi odio</a> -
+    <small
+      title="Only one article titled 'enim ultricies dolore metus ac eiusmod interdum' has Category 'facilisi odio'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/notes/notes_2/">felis</a> -
+    <small
+      title="Only one article titled 'tempus fermentum urna eget' has Category 'felis'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_3/">fringilla</a> -
+    <small
+      title="Only one article titled 'luctus enim ultricies auctor pulvinar nam etiam' has Category 'fringilla'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_2/">id</a> -
+    <small
+      title="Only one article titled 'enim ultricies dolore metus ac eiusmod interdum' has Category 'id'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_3/">imperdiet</a> -
+    <small
+      title="Only one article titled 'nisl natoque lacinia' has Category 'imperdiet'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_4/">mauris</a> -
+    <small
+      title="Only one article titled 'integer purus aliquam' has Category 'mauris'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_2/">morbi</a> -
+    <small
+      title="Only one article titled 'non vitae at' has Category 'morbi'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_4/">phasellus</a> -
+    <small
+      title="Only one article titled 'est odio vel sapien augue neque incididunt' has Category 'phasellus'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/notes/notes_3/">porttitor</a> -
+    <small
+      title="Only one article titled 'luctus dolore vivamus nullam' has Category 'porttitor'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/post/post_4/">rhoncus venenatis</a> -
+    <small
+      title="Only one article titled 'est odio vel sapien augue neque incididunt' has Category 'rhoncus venenatis'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="https://github.com/stone5508/stone5508.github.io.git/poems/poems_1/">ridiculus</a> -
+    <small
+      title="Only one article titled 'tellus mus elementum' has Category 'ridiculus'"
+      >1</small
+    >
+  </div>
+  
+  
+  
+</div>
+
+
+    </div>
+  </div>
+</div>
+
+      </main>
+    </div>
+    <div class="footer">
+      <div class="mb-4 d-flex flex-row justify-content-center">
+  
+</div>
+<footer class="border-top border-primary2" style="height: 60px;">
+  <div class="p-3 d-flex flex-row flex-wrap justify-content-between">
+    <div class="copyright">
+      <small>2019. First Last</small>
+    </div>
+    <div>
+      <small>
+        <a href="https://github.com/darshanbaral/khata">khata</a> by
+        <a href="https://www.darshanbaral.com/"> Darshan Baral</a>
+        &middot; powered by
+        <a href="https://gohugo.io/">
+          hugo
+        </a>
+      </small>
+    </div>
+  </div>
+</footer>
+
+    </div>
+  </body>
+</html>
